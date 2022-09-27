@@ -22,7 +22,7 @@ pipeline {
     stages() {
         stage('========== Clone repository ==========') {
             steps() {
-                echo 'checkout scm'
+                checkout scm
             }
         }
         
