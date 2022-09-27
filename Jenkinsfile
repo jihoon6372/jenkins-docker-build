@@ -28,7 +28,7 @@ pipeline {
         
         stage('========== Build image ==========') {
             steps {
-                echo 'Testing..'
+                app = docker.build("jihoon6372/jenkins-docker-build")
             }
         }
         
