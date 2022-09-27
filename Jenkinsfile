@@ -28,13 +28,15 @@ pipeline {
         
         stage('========== Build image ==========') {
             steps {
+                app = docker.build("jihoon6372/jenkins-docker-build")
                 sh "docker build -t jihoon6372/jenkins-docker-build ."
             }
         }
         
         stage('========== Push image ==========') {
             steps {
-                sh "docker push jihoon6372/jenkins-docker-build"
+                // echo env.DOCKER_HUB_ACCESS_TOKEN
+                // sh "docker push jihoon6372/jenkins-docker-build"
             }
         }        
     }
