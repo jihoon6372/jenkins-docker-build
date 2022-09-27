@@ -1,11 +1,9 @@
 node {
-  stage('========== Clone repository ==========') {
+  stage('Build') {
     checkout scm
-  }
-  stage('========== Build image ==========') {
     app = docker.build("jihoon6372/jenkins-docker-build")
   }
-  stage('========== Push image ==========') {
+  stage('Deploy') {
     docker.withRegistry('https://registry.hub.docker.com', '6db2a1e3-0dec-49b2-96b0-a383a63585dc') {
       app.push("${env.BUILD_NUMBER}")
       app.push("latest")
