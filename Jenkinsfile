@@ -34,7 +34,7 @@ pipeline {
         
         stage('========== Push image ==========') {
             steps {
-                echo 'Testing..'
+                sh "docker push jihoon6372/jenkins-docker-build"
             }
         }        
     }
