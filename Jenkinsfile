@@ -38,7 +38,7 @@ pipeline {
                 // echo env.DOCKER_HUB_ACCESS_TOKEN
                 // sh "docker push jihoon6372/jenkins-docker-build"
                 sh "docker login -u ${DOCKER_USER_ID} -p ${DOCKER_ACCESS_TOKEN}"
-                sh "docker push ${DOCKER_USER_ID}/spaceship_pipeline_${var.toLowerCase()}:${BUILD_NUMBER}"
+                sh "docker push ${DOCKER_USER_ID}/jenkins-docker-build"
             }
         }        
     }
