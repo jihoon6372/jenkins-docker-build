@@ -28,7 +28,7 @@ pipeline {
         
         stage('========== Build image ==========') {
             steps {
-                app = docker.build("jihoon6372/jenkins-docker-build")
+                sh "docker build -t jihoon6372/jenkins-docker-build ."
             }
         }
         
